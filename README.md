@@ -1,0 +1,1 @@
+Sample application to test Spring Boot with R2DBC using H2
