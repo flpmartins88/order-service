@@ -38,11 +38,11 @@ dependencies {
     testImplementation 'io.projectreactor:reactor-test'
 }
 
-ext['h2.version'] = '1.4.199'
+//ext['h2.version'] = '1.4.199'
 
 dependencyManagement {
     imports {
-        mavenBom 'org.springframework.boot.experimental:spring-boot-bom-r2dbc:0.1.0.M2'
+        mavenBom 'org.springframework.boot.experimental:spring-boot-bom-r2dbc:0.1.0.M3'
     }
 }
 

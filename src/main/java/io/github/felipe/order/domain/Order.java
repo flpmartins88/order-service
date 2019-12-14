@@ -1,6 +1,5 @@
 package io.github.felipe.order.domain;
 
-import java.util.UUID;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
@@ -8,18 +7,27 @@ import org.springframework.data.relational.core.mapping.Table;
 public class Order {
 
     @Id
-    private String id = UUID.randomUUID().toString();
+    private Long id;
 
     private String customerName;
 
     protected Order() {}
 
-    public Order(String customerName) {
+    public Order(Long id, String customerName) {
+        this.id = id;
         this.customerName = customerName;
     }
 
-    public String getId() {
+    public Order(String customerName) {
+        this(null, customerName);
+    }
+
+    public Long getId() {
         return id;
+    }
+
+    protected void setId(Long id) {
+        this.id = id;
     }
 
     public void setCustomerName(String customerName) {

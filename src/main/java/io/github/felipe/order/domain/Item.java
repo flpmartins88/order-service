@@ -1,14 +1,15 @@
 package io.github.felipe.order.domain;
 
-import java.util.UUID;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
+@Table("items")
 public class Item {
 
     @Id
-    private String id = UUID.randomUUID().toString();
+    private Integer id;
 
-    private String order;
+    private Integer order;
 
     private String name;
     private Integer quantity;
@@ -16,23 +17,23 @@ public class Item {
 
     protected Item() {}
 
-    public Item(String order, String name, Integer quantity, Long value) {
+    public Item(Integer order, String name, Integer quantity, Long value) {
         this.order = order;
         this.name = name;
         this.quantity = quantity;
         this.value = value;
     }
 
-    public String getId() {
+    protected void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public String getOrder() {
+    public Integer getOrder() {
         return order;
-    }
-
-    public void setOrder(String order) {
-        this.order = order;
     }
 
     public String getName() {
